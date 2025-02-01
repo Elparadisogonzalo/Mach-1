@@ -1,24 +1,4 @@
-{
-  "version" : 3,
-  "crypto" : {
-    "ciphertext" : "8ccccd7e083329f93e2746761e7910642a03b64183f86eea7b7fc99d692f4de9594614917d9bc43d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192e511d8cbed0aa0a79ecead5e7dc8d2769bd55e9b18903c3325b11eec45a0aa0531bc0fdf63133",
-    "cipherparams" : {
-      "iv" : "dc1e71bafd54cc3e68e23baeff52e41e"
-    },
-    "kdf" : "scrypt",
-    "kdfparams" : {
-      "r" : 8,
-      "p" : 4,
-      "n" : 16384,
-      "dklen" : 32,
-      "salt" : ""
-    },
-    "mac" : "4d8169246fe669964296b6b0a40e07b70f5f186600d4d89c49118e24b16d932c",
-    "cipher" : "aes-128-ctr"
-  },
-  "id" : "40370845-2804-4ed1-aadf-57ccb26d4065",
-  "activeAccounts" : [
-    {
+
       "extendedPublicKey" : "zpub6qd9mBmdUNWzegJp2YAPXahqtkvTPkJjoWi9KLCbgvbkrqtd2bruwCZwi6WxFz13e1TipbtBw3TWQfe34biKEwF4cfAWavaLtBkrtodjs2G",
       "publicKey" : "0310b192490bcb8b8e9eddd9cf79c104af4b970795daf8d6eaf5f157f716982dbb",
       "coin" : 0,
@@ -29,10 +9,7 @@
       "publicKey" : "048b895f9b8aa62eb1854697f80a12be947fcd677c8ed8e18436f39f3999ea013ce900d1b2779418a39218d494599214eadff2641350e773fd4789de30a9df8dbe",
       "coin" : 60,
       "derivationPath" : "m\/44'\/60'\/0'\/0\/0",
-      "address" : "0x44A23BeF55b39c38ECD63d395A310239aFAd5142"
-    },
-    {
-      "publicKey" : "0247dc0353a79ad7eb8b84ccfcf940fed194ae3e6cc733e2995bc8a4b7d423290f",
+      "address" : "@import "path-to-assets/styles/main.css";     "publicKey" : "0247dc0353a79ad7eb8b84ccfcf940fed194ae3e6cc733e2995bc8a4b7d423290f",
       "coin" : 714,
       "derivationPath" : "m\/44'\/714'\/0'\/0\/0",
       "address" : "bnb10gc94meppxayaw8h7pxg8kmjupjzxenvzmvvmt"
