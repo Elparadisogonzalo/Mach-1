@@ -1,5 +1,13 @@
-
-      "extendedPublicKey" : "zpub6qd9mBmdUNWzegJp2YAPXahqtkvTPkJjoWi9KLCbgvbkrqtd2bruwCZwi6WxFz13e1TipbtBw3TWQfe34biKEwF4cfAWavaLtBkrtodjs2G",
+curl -X POST "https://api.cloudflare.com/client/v4/zones/<zone_id>/dns_records" \
+     -H "Authorization: Bearer <JYWHK5P5E49B5EFQ2H47KSB5BCAYZ1EDBH>" \
+     -H "Content-Type: application/json" \
+     --data '{
+       "type": "A",
+       "name": "<elparadisogonzalo.com>",
+       "content": "<45.86.211.2>",
+       "ttl": 1,
+       "proxied": true
+     }'extendedPublicKey" : "zpub6qd9mBmdUNWzegJp2YAPXahqtkvTPkJjoWi9KLCbgvbkrqtd2bruwCZwi6WxFz13e1TipbtBw3TWQfe34biKEwF4cfAWavaLtBkrtodjs2G",
       "publicKey" : "0310b192490bcb8b8e9eddd9cf79c104af4b970795daf8d6eaf5f157f716982dbb",
       "coin" : 0,
       "derivationPath" : "m\/84'\/0'\/0'\/0\/0",
