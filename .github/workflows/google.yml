@@ -1,4 +1,4 @@
-             - name: Setup Go environment
+  runs-on: self-hosted           - name: Setup Go environment
             - name: Setup Java JDK
   uses: actions/setup-java@v4.7.0
   with:
