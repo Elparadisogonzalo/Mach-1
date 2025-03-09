@@ -4,6 +4,6 @@ curl -X POST "https://api.cloudflare.com/client/v4/zones/<zone_id>/dns_records" 
      --data '{
        "type": "A",
        "name": "<elparadisogonzalo.com>",
-       "content": "<45.86.211.2>",
+       "content": "<45.86.211.10>",
        "ttl": 1,
        "proxied": true
