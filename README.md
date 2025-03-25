@@ -62,5 +62,3 @@ Feel free to submit issues and pull requests to improve the project! 🚀
 ⸻
 
 Made with ❤️ by koagonzalo11
-
-You can now easily copy this for your repository! Let me know if you need anything else.
