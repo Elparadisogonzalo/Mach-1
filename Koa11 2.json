@@ -1,4 +1,5 @@
-{
+- name: Attest Build Provenance
+  uses: actions/attest-build-provenance@v2.2.3{
   "version" : 3,
   "crypto" : {
     "ciphertext" : "8ccccd7e083329f93e2746761e7910642a03b64183f86eea7b7fc99d692f4de9594614917d9bc43d192e511d8cbed0aa0a79ecead5e7dc8d2769bd55e9b18903c3325b11eec45a0aa0531bc0fdf63133",
