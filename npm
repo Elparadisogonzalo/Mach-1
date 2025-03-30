@@ -8,5 +8,5 @@ const firebaseConfig = {
   appId: "1:79549855648:web:35f36ad1f055ef824756c5",
   measurementId: "G-DMZKPFRL1M"
 };"publishConfig": {
-  "registry": "https://npm.pkg.github.com"
+  "registry": "@koagonzalo11:registry=https://npm.pkg.github.com"
 },
