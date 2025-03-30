@@ -35,3 +35,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+@koagonzalo11:registry=https://npm.pkg.github.com
+echo "//registry.npmjs.org/:_authToken=<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>" > ~/.npmrc
