@@ -1,0 +1,13 @@
+version: '1.0'
+services:
+  termux:
+    image: termux/android
+    restart: always
+    command: ["/data/data/com.termux/files/home/start_termux.sh"]
+    environment:
+      - TERMUX_HOME=/data/data/com.termux/files/home
+      - PATH=/data/data/com.termux/files/usr/bin:$PATH
+    volumes:
+      - /data/data/com.termux/files/home:/home/termux
+      - /sdcard:/gdrive
+    network_mode: "host"
