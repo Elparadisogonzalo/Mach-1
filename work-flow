@@ -1,2 +1,2 @@
-runs-on: self-hosted
+[![Deploy Jekyll with GitHub Pages dependencies preinstalled](https://github.com/Elparadisogonzalo/Assets3/actions/workflows/jekyll-gh-pages.yml/badge.svg)](https://github.com/Elparadisogonzalo/Assets3/actions/workflows/jekyll-gh-pages.yml)runs-on: self-hosted
 runs-on: ubuntu-latest
