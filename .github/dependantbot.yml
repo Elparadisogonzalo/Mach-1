@@ -1,0 +1,18 @@
+# .github/dependabot.yml
+version: 2
+updates:
+  # GitHub Actions updates
+  - package-ecosystem: "github-actions"
+    directory: "/" # Location of .github/workflows
+    schedule:
+      interval: "weekly"
+
+  # NPM (Node.js) dependencies
+  - package-ecosystem: "npm"
+    directory: "/" # Change if your package.json is in a subdirectory
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps"
+      include: "scope"
