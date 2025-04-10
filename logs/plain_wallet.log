@@ -105,3 +105,9 @@ URL: https://zano.api.wombat.systems,  port: 443
 2025-Apr-08 22:43:43.061992 [tid:0x200b54200] [INIT PLAIN_WALLET_INSTANCE] Ver:2.1.1.392[ccfc032](Release)
 Working dir: /var/mobile/Containers/Data/Application/E59B5E47-560B-404C-89AB-1B23CDEEFF48/Documents
 URL: https://zano.api.wombat.systems,  port: 443
+2025-Apr-09 11:04:29.224907 [tid:0x200b54200] Plain wallet initialized: Zano v2.1.1.392[ccfc032], log location: /var/mobile/Containers/Data/Application/E59B5E47-560B-404C-89AB-1B23CDEEFF48/Documents/logs/plain_wallet.log
+2025-Apr-09 11:04:29.226086 [tid:0x200b54200] Initing...
+2025-Apr-09 11:04:29.226125 [tid:0x200b54200] Detecting APPDIR... 
+2025-Apr-09 11:04:29.226517 [tid:0x200b54200] [INIT PLAIN_WALLET_INSTANCE] Ver:2.1.1.392[ccfc032](Release)
+Working dir: /var/mobile/Containers/Data/Application/E59B5E47-560B-404C-89AB-1B23CDEEFF48/Documents
+URL: https://zano.api.wombat.systems,  port: 443
