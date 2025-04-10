@@ -1,4 +1,4 @@
-# .github/dependabot.yml
+# [![Deploy Jekyll with GitHub Pages dependencies preinstalled](https://github.com/Elparadisogonzalo/Assets3/actions/workflows/jekyll-gh-pages.yml/badge.svg)](https://github.com/Elparadisogonzalo/Assets3/actions/workflows/jekyll-gh-pages.yml).github/dependabot.yml
 version: 2
 updates:
   # GitHub Actions updates

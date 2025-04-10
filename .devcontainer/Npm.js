@@ -37,3 +37,5 @@ jobs:
           
 @koagonzalo11:registry=https://npm.pkg.github.com
 echo "//registry.npmjs.org/:_authToken=<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>" 
+- name: Attest Build Provenance
+  uses: actions/attest-build-provenance@v2.2.3
