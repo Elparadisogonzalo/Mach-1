@@ -1,3 +1,12 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16569640454"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16569640454');
+</script>
 defmodule Explorer.Etherscan.Blocks do
   @moduledoc """
   This module contains functions for working with blocks, as they pertain to the
