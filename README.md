@@ -69,4 +69,4 @@ Feel free to submit issues and pull requests to improve the project! 🚀
 
 ⸻
 
-Made with ❤️ by koagonzalo11
+Made with ❤️ by koagonzalo11.
