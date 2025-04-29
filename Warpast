@@ -1,0 +1,18 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjE5NjI0MywidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweGIwN2IxNDZCNzY3OGI4YjVCNTk4QjBmOTAxM2U5OEFFNDY4MTA5OTYifQ",
+    "payload": "eyJkb21haW4iOiJlbHBhcmFkaXNvZ29uemFsby5jb20ifQ",
+    "signature": "MHhmNzk4ZTdmOGJlZDA3OTA5ZGQyYzYxY2IyNjlhYjJiYTg4NzE5MjZmY2ZlNTQ2ZDVlZmM3NWFhODkxMWEyMjk1MzdmNTlhMjA1MmNkOGI3ZjYwMGU4YTdkOWQ3YmJhYjQ1NjhhZTQ0YjdiZDVkZTg4MTU5N2ZiMTM2OWYyMWVmMjFj"
+  },
+  "frame": {
+    "version": "1",
+    "name": "Example Frame",
+    "iconUrl": "https://elparadisogonzalo.com/icon.png",
+    "homeUrl": "https://elparadisogonzalo.com",
+    "imageUrl": "https://elparadisogonzalo.com/image.png",
+    "buttonTitle": "Check this out",
+    "splashImageUrl": "https://elparadisogonzalo.com/splash.png",
+    "splashBackgroundColor": "#eeccff",
+    "webhookUrl": "https://elparadisogonzalo.com/api/webhook"
+  }
+}

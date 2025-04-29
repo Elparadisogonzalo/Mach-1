@@ -1,7 +1,16 @@
-                    GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16569640454"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
- Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+  gtag('config', 'AW-16569640454');
+</script>
+GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 march 2025
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <http://elparadisogonzalo.com/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 

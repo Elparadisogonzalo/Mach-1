@@ -1,4 +1,4 @@
-env:
+[![Deploy Jekyll with GitHub Pages dependencies preinstalled](https://github.com/Elparadisogonzalo/Assets3/actions/workflows/jekyll-gh-pages.yml/badge.svg)](https://github.com/Elparadisogonzalo/Assets3/actions/workflows/jekyll-gh-pages.yml)env:
   NODE_AUTH_TOKEN: ${{ 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 }}
 name: CI
 

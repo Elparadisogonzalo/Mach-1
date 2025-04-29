@@ -1,4 +1,12 @@
-# 🚀 Asset3 Repository  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16569640454"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16569640454');
+</script># 🚀 Asset3 Repository  
 
 ## 🌐 Project Overview  
 This repository is designed to interact with **Ethereum & Binance Smart Chain (BSC)** networks, utilizing Web3, GitHub CLI, Node.js, and Google Cloud CLI. It is linked to the **Unstoppable Domain**: `elparadisogonzalo.com`.  
@@ -61,4 +69,4 @@ Feel free to submit issues and pull requests to improve the project! 🚀
 
 ⸻
 
-Made with ❤️ by koagonzalo11
+Made with ❤️ by koagonzalo11.
