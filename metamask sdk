@@ -1,0 +1,23 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16569640454"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16569640454');
+</script>
+// index.js
+import { MetaMaskSDK } from "@metamask/sdk"
+
+const MMSDK = new MetaMaskSDK({
+  dappMetadata: {
+    name: "Example Node.js Dapp",
+  },
+  infuraAPIKey: 6267a9f5a93049eabb19549fcc7acc40,
+  // Other options.
+})
+
+const accounts = await MMSDK.connect()
+const provider = MMSDK.getProvider()
+provider.request({ method: "eth_accounts", params: [] })

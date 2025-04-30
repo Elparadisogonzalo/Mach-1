@@ -1,0 +1,19 @@
+import { getWebInstrumentations, initializeFaro } from '@grafana/faro-web-sdk';
+import { TracingInstrumentation } from '@grafana/faro-web-tracing';
+
+initializeFaro({
+  url: 'https://faro-collector-prod-us-west-0.grafana.net/collect/ded333c400c144b0b31de429ee7e3f9f',
+  app: {
+    name: 'Elp',
+    version: '1.0.0',
+    environment: 'production'
+  },
+  trackGeolocation: false,
+  instrumentations: [
+    // Mandatory, omits default instrumentations otherwise.
+    ...getWebInstrumentations(),
+
+    // Tracing package to get end-to-end visibility for HTTP requests.
+    new TracingInstrumentation(),
+  ],
+});

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syncConfig>
+  <user>
+    <email>genyoungclip@gmail.com</email>
+    <domain>elparadisogonzalo.com</domain>
+  </user>
+  <syncSettings>
+    <direction>two-way</direction>
+    <frequency>daily</frequency>
+    <lastSynced>2025-04-25T12:00:00Z</lastSynced>
+    <data>
+      <item type="emails" enabled="true" />
+      <item type="files" enabled="true" />
+      <item type="contacts" enabled="false" />
+    </data>
+    <destination>
+      <server>sync.elparadisogonzalo.com</server>
+      <protocols>
+        <protocol>HTTP</protocol>
+        <protocol>HTTPS</protocol>
+      </protocols>
+    </destination>
+  </syncSettings>
+</syncConfig>
