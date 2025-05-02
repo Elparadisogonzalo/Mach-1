@@ -1,10 +1,11 @@
-"name": "@elparadisogonzalo/server",
-  "version": "1.0.0",
-  "description": "Server app that uses the elparadisogonzalo/assets3 package",
-  "main": "index.js",
-  "author": "",
-  "license": "MIT",
+{
   "dependencies": {
-    "elparadisogonzalo/assets3": "1.0.0"
+    "@trustwallet/wallet-core": "^4.2.21",
+    "docker": "^0.2.14",
+    "geth": "^0.4.0",
+    "ipfs-core": "^0.0.0",
+    "latest": "^0.2.0",
+    "multiformats": "^13.3.2",
+    "update": "^0.4.2"
   }
-
+}
