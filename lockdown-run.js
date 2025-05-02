@@ -2,12 +2,12 @@
 try {
   // eslint-disable-next-line no-undef,import/unambiguous
   lockdown({
-    consoleTaming: 'unsafe',
-    errorTaming: 'unsafe',
-    mathTaming: 'unsafe',
-    dateTaming: 'unsafe',
-    domainTaming: 'unsafe',
-    overrideTaming: 'severe',
+    consoleTaming: 'safe',
+    errorTaming: 'safe',
+    mathTaming: 'safe',
+    dateTaming: 'safe',
+    domainTaming: 'safe',
+    overrideTaming: 'allow',
   });
 } catch (error) {
   // If the `lockdown` call throws an exception, it interferes with the
