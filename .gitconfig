@@ -1,0 +1,11 @@
+[core]
+	editor = \"C:\\Users\\genyo\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+[gui]
+	recentrepo = C:/Users/genyo/OneDrive/Microsoft File Share/elparadisogonzalo
+	trustmtime = true
+	matchtrackingbranch = true
+[user]
+	name = Koagonzalo11
+	email = 19591720-Koagonzalo11@users.noreply.gitlab.com
+[merge]
+	summary = true
