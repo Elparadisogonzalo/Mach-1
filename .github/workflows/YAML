@@ -9,6 +9,6 @@ services:
       - TERMUX_HOME=/data/data/com.elparadisogonzalo/files/home
       - PATH=/data/data/com.elparadisogonzalo/files/usr/bin:$PATH
     volumes:
-      - /data/data/com.termux/files/home:/home/termux
+      - /data/data/com.elparadisogonzalo/files/home:/home/termux
       - /shared:/shared
     network_mode: "host"
