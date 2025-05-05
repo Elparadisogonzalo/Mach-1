@@ -9,201 +9,47 @@
 
   gtag('config', 'AW-16569640454');
 </script> runs-on: self-hosted           - name: Setup Go environment
-            - name: Setup Java JDK
-  uses: actions/setup-java@v24.0
-  with:
-    # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
-    java-version: # optional
-    # The path to the `.java-version` file. See examples of supported syntax in README file
-    java-version-file: # optional
-    # Java distribution. See the list of supported distributions in README file
-    distribution: 
-    # The package type (jdk, jre, jdk+fx, jre+fx)
-    java-package: # optional, default is jdk
-    # The architecture of the package (defaults to the action runner's architecture)
-    architecture: # optional
-    # Path to where the compressed JDK is located
-    jdkFile: # optional
-    # Set this option if you want the action to check for the latest available version that satisfies the version spec
-    check-latest: # optional
-    # ID of the distributionManagement repository in the pom.xml file. Default is `github`
-    server-id: # optional, default is github
-    # Environment variable name for the username for authentication to the Apache Maven repository. Default is $GITHUB_ACTOR
-    server-username: # optional, default is GITHUB_ACTOR
-    # Environment variable name for password or token for authentication to the Apache Maven repository. Default is $GITHUB_TOKEN
-    server-password: # optional, default is GITHUB_TOKEN
-    # Path to where the settings.xml file will be written. Default is ~/.m2.
-    settings-path: # optional
-    # Overwrite the settings.xml file if it exists. Default is "true".
-    overwrite-settings: # optional, default is true
-    # GPG private key to import. Default is empty string.
-    gpg-private-key: # optional
-    # Environment variable name for the GPG private key passphrase. Default is $GPG_PASSPHRASE.
-    gpg-passphrase: # optional
-    # Name of the build platform to cache dependencies. It can be "maven", "gradle" or "sbt".
-    cache: # optional
-    # The path to a dependency file: pom.xml, build.gradle, build.sbt, etc. This option can be used with the `cache` option. If this option is omitted, the action searches for the dependency file in the entire repository. This option supports wildcards and a list of file names for caching multiple dependencies.
-    cache-dependency-path: # optional
-    # Workaround to pass job status to post job step. This variable is not intended for manual setting
-    job-status: # optional, default is ${{ job.status }}
-    # The token used to authenticate when fetching version manifests hosted on github.com, such as for the Microsoft Build of OpenJDK. When running this action on github.com, the default value is sufficient. When running on GHES, you can pass a personal access token for github.com if you are experiencing rate limiting.
-    token: # optional, default is ${{ github.server_url == 'https://github.com' && github.token || '' }}
-    # Name of Maven Toolchain ID if the default name of "${distribution}_${java-version}" is not wanted. See examples of supported syntax in Advanced Usage file
-    mvn-toolchain-id: # optional
-    # Name of Maven Toolchain Vendor if the default name of "${distribution}" is not wanted. See examples of supported syntax in Advanced Usage file
-    mvn-toolchain-vendor: # optional
-            uses: actions/setup-go@v1.24.2
-  with:
-    # The Go version to download (if necessary) and use. Supports semver spec and ranges. Be sure to enclose this option in single quotation marks.
-    go-version: # optional
-    # Path to the go.mod or go.work file.
-    go-version-file: # optional
-    # Set this option to true if you want the action to always check for the latest available version that satisfies the version spec
-    check-latest: # optional
-    # Used to pull Go distributions from go-versions. Since there's a default, this is typically not supplied by the user. When running this action on github.com, the default value is sufficient. When running on GHES, you can pass a personal access token for github.com if you are experiencing rate limiting.
-    token: # optional, default is ${{ github.server_url == 'https://github.com' && github.token || '' }}
-    # Used to specify whether caching is needed. Set to true, if you'd like to enable caching.
-    cache: # optional, default is true
-    # Used to specify the path to a dependency file - go.sum
-    cache-dependency-path: # optional
-    # Target architecture for Go to use. Examples: x86, x64. Will use system architecture by default.
-    architecture: # optional
-                     - name: Setup Node.js environment
-  uses: actions/setup-node@v22.0.0
-  with:
-    # Set always-auth in npmrc.
-    always-auth: # optional, default is false
-    # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
-    node-version: # optional
-    # File containing the version Spec of the version to use.  Examples: package.json, .nvmrc, .node-version, .tool-versions.
-    node-version-file: # optional
-    # Target architecture for Node to use. Examples: x86, x64. Will use system architecture by default.
-    architecture: # optional
-    # Set this option if you want the action to check for the latest available version that satisfies the version spec.
-    check-latest: # optional
-    # Optional registry to set up for auth. Will set the registry in a project level .npmrc and .yarnrc file, and set up auth to read in from env.NODE_AUTH_TOKEN.
-    registry-url: # optional
-    # Optional scope for authenticating against scoped registries. Will fall back to the repository owner when using the GitHub Packages registry (https://npm.pkg.github.com/).
-    scope: # optional
-    # Used to pull node distributions from node-versions. Since there's a default, this is typically not supplied by the user. When running this action on github.com, the default value is sufficient. When running on GHES, you can pass a personal access token for github.com if you are experiencing rate limiting.
-    token: # optional, default is ${{ github.server_url == 'https://github.com' && github.token || '' }}
-    # Used to specify a package manager for caching in the default directory. Supported values: npm, yarn, pnpm.
-    cache: # optional
-    # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
-    cache-dependency-path: # optional
-          # This workflow will build a docker container, publish it to Google Container
-# Registry, and deploy it to GKE when there is a push to the "main"
-# branch.
-#
-# To configure this workflow:
-#
-# 1. Enable the following Google Cloud APIs:
-#
-#    - Artifact Registry (artifactregistry.googleapis.com)
-#    - Google Kubernetes Engine (container.googleapis.com)
-#    - IAM Credentials API (iamcredentials.googleapis.com)
-#
-#    You can learn more about enabling APIs at
-#    https://support.google.com/googleapi/answer/6158841.
-#
-# 2. Ensure that your repository contains the necessary configuration for your
-#    Google Kubernetes Engine cluster, including deployment.yml,
-#    kustomization.yml, service.yml, etc.
-#
-# 3. Create and configure a Workload Identity Provider for GitHub:
-#    https://github.com/google-github-actions/auth#preferred-direct-workload-identity-federation.
-#
-#    Depending on how you authenticate, you will need to grant an IAM principal
-#    permissions on Google Cloud:
-#
-#    - Artifact Registry Administrator (roles/artifactregistry.admin)
-#    - Kubernetes Engine Developer (roles/container.developer)
-#
-#    You can learn more about setting IAM permissions at
-#    https://cloud.google.com/iam/docs/manage-access-other-resources
-#
-# 5. Change the values in the "env" block to match your values.
+                                                 Setup Cloud Run
+                                                 App Engine
+                                                 Compute Engine
+                                                 Kubernetes Engine
+                                                 Storage
+                                                 SQL
+                                                 billing Account
+      contents: 'write'
+      
+       id-token: 'write'
 
-name: 'Build and Deploy to GKE'
-
-on:
-  push:
-    branches:
-      - '"main"'
-
-env:
-  PROJECT_ID: 'my-project' # TODO: update to your Google Cloud project ID
-  GAR_LOCATION: 'us-central1' # TODO: update to your region
-  GKE_CLUSTER: 'cluster-1' # TODO: update to your cluster name
-  GKE_ZONE: 'us-central1-c' # TODO: update to your cluster zone
-  DEPLOYMENT_NAME: 'gke-test' # TODO: update to your deployment name
-  REPOSITORY: 'samples' # TODO: update to your Artifact Registry docker repository name
-  IMAGE: 'static-site'
-  WORKLOAD_IDENTITY_PROVIDER: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider' # TODO: update to your workload identity provider
-
-jobs:
-  setup-build-publish-deploy:
-    name: 'Setup, Build, Publish, automation,sync and Deploy'
-    runs-on: 'ubuntu-latest'
-    environment: 'production'
-
-    permissions:
-      contents: 'read'
-      id-token: 'write'
-
-    steps:
-      - name: 'Checkout'
-        uses: 'actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332' # actions/checkout@v4
-
-      # Configure Workload Identity Federation and generate an access token.
-      #
-      # See https://github.com/google-github-actions/auth for more options,
-      # including authenticating via a JSON credentials file.
-      - id: 'auth'
-        name: 'Authenticate to Google Cloud'
-        uses: 'google-github-actions/auth@f112390a2df9932162083945e46d439060d66ec2' # google-github-actions/auth@v2
-        with:
-          workload_identity_provider: '${{ env.WORKLOAD_IDENTITY_PROVIDER }}'
-
-      # Authenticate Docker to Google Cloud Artifact Registry
-      - name: 'Docker Auth'
-        uses: 'docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567' # docker/login-action@v3
-        with:
-          username: 'oauth2accesstoken'
-          password: '${{ steps.auth.outputs.auth_token }}'
-          registry: '${{ env.GAR_LOCATION }}-docker.pkg.dev'
-
-      # Get the GKE credentials so we can deploy to the cluster
-      - name: 'Set up GKE credentials'
-        uses: 'google-github-actions/get-gke-credentials@6051de21ad50fbb1767bc93c11357a49082ad116' # google-github-actions/get-gke-credentials@v2
-        with:
-          cluster_name: '${{ env.GKE_CLUSTER }}'
-          location: '${{ env.GKE_ZONE }}'
-
-      # Build the Docker image
-      - name: 'Build and push Docker container'
-        run: |-
-          DOCKER_TAG="${GAR_LOCATION}-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY}/${IMAGE}:${GITHUB_SHA}"
-
-          docker build \
-            --tag "${DOCKER_TAG}" \
-            --build-arg GITHUB_SHA="${GITHUB_SHA}" \
-            --build-arg GITHUB_REF="${GITHUB_REF}" \
-            .
-
-          docker push "${DOCKER_TAG}"
-
-      # Set up kustomize
-      - name: 'Set up Kustomize'
-        run: |-
-          curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.3/kustomize_v5.4.3_linux_amd64.tar.gz
-          chmod u+x ./kustomize
-
-      # Deploy the Docker image to the GKE cluster
-      - name: 'Deploy to GKE'
-        run: |-
-          # replacing the image name in the k8s template
-          ./kustomize edit set image LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
-          ./kustomize build . | kubectl apply -f -
-          kubectl rollout status deployment/$DEPLOYMENT_NAME
-          kubectl get services -o wide
+Google Cloud Configuration for Development Container
+version: '1.0'
+services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/universal:2
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/workspace/google_credentials.json
+      - PROJECT_ID=elparadisogonzalo-project-id  # Use your actual Google Cloud Project ID here
+      - ZONE=# Google Cloud Configuration for Development Container
+version: '1.0'
+services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/universal:2
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/workspace/google_credentials.json
+      - PROJECT_ID=elparadisogonzalo-project-id  # Use your actual Google Cloud Project ID here
+      - ZONE=global
+      - REGION=universal
+    ports:
+      - "22:22"  # SSH access
+      - "8080:8080"  # Example service port
+    volumes:
+      - ./google_credentials.json:/workspace/google_credentials.json:ro  # Mounting Google credentials
+      - ./src:/workspace/src  # Your code or project directory
+    features:
+      - ghcr.io/devcontainers/features/sshd:1  # Install SSH server
+    ssh:
+      enabled: true
+      public_key: "ssh-rsa AAAAB3NzaC1yc2EA...xQOMq1Mds4D3ey6bWQ1uBEHdP3LiUzS2FMRCy3GeQoM"  # SSH public key for access
+    commands:
+      - "gcloud auth activate-service-account --key-file=/workspace/google_credentials.json"  # Authenticate with Google Cloud
+      - "gcloud config set project ${PROJECT_ID}"  # Set Google Cloud project ID
+      - "gcloud config set compute/zone ${ZONE}"  # Set Google Cloud compute zone
