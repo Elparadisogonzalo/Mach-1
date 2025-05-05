@@ -1,4 +1,42 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {"ghcr.io/devcontainers/features/sshd:1": {ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsAENfCrsP80tjhTD0gmAEO6hoJNeavSKW/UE/XgAQr2UYM6jZm8wasqo4qDknwpHrG7iCfy+d3c+dgwiPgyAO6fF8/bbqEwUSjPOwfS9czdQPVOG2HhMjxDVsMEzSZHdPsbaLW10glkfXeCVCVbDrFDddbcwolszszdIpLBTBQyjx+hvm3EvUna1PSBrod2DRc+UgB/UjwSCDNXvPj9xj9IVVQn/cULzt6yJH3lgaKLCJlc/Dsjx2sEHhuF+d8HtL/z9d/e1fxhU//2e1xLAIndwNvGyKbnfRz4dFpkNmmWRJ2osOjpjrUQUVZZipBreFlHMJ0K36gxpMA4hCkKNT}
+  "name": "Jekyll + Node.js Smart Contract Development Container",
+  "context": ".",
+  "dockerFile": "Dockerfile",
+  "workspaceFolder": "/app",
+  "extensions": [
+    "ms-vscode.vscode-node-azure-pack", 
+    "dbaeumer.vscode-eslint", 
+    "jekyll.jekyll",
+    "ms-azuretools.vscode-docker",
+    "esbenp.prettier-vscode"
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "javascript.format.enable": true,
+    "html.format.enable": true,
+    "scss.format.enable": true
+  },
+  "postCreateCommand": "npm install && bundle install",
+  "runArgs": [
+    "--network=host"
+  ],
+  "portsAttributes": {
+    "4000": {
+      "label": "Jekyll Site",
+      "onAutoForward": "openBrowser"
+    },
+    "3000": {
+      "label": "Node.js Server"
+    }
+  },
+  "forwardPorts": [
+    4000,
+    3000
+  ],
+  "remoteUser": "vscode",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/app,type=bind"
+  ],
+  "appPort": [4000, 3000],
+  "devPort": [4000, 3000]
 }
