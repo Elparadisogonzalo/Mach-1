@@ -1,0 +1,39 @@
+# _config.yml
+title: Elparadisogonzalo Smart Contracts
+description: Web interface for interacting with smart contracts.
+baseurl: "/"
+url: "https://yourusername.github.io" # Change to your actual GitHub Pages URL
+
+# Enable GitHub Pages support
+remote_theme: "jekyll/minima"
+
+# Enable Markdown for content files
+markdown: kramdown
+
+# Set default layout for pages
+defaults:
+  - scope:
+      path: "_pages"
+    values:
+      layout: "default"
+
+# Enable GitHub Pages for plugin management
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Build settings
+exclude:
+  - "node_modules"
+  - "public"
+
+# Enable Sass
+sass:
+  style: compressed
+
+# Include Jekyll metadata files
+include:
+  - "_pages"
+  - "_includes"
+  - "_layouts"
+  - "assets"
