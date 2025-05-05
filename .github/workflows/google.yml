@@ -8,7 +8,7 @@
   gtag('js', new Date());
 
   gtag('config', 'AW-16569640454');
-</script> runs-on: self-hosted           - name: Setup Go environment
+</script> runs-on:Github/Gitlab Shared Runner       - name: Setup Go environment
                                                  Setup Cloud Run
                                                  App Engine
                                                  Compute Engine
@@ -16,6 +16,13 @@
                                                  Storage
                                                  SQL
                                                  billing Account
+                                                 mailto
+                                                 Extension   
+                                                 Sync
+                                                 ether.js
+                                                 debug
+                                                 remote 
+                                                 web3.js
       contents: 'write'
       
        id-token: 'write'
