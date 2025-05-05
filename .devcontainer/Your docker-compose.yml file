@@ -1,15 +1,34 @@
-Your docker-compose.yml fileYour docker-compose.yml file
-version: '3.8'
-services:
- elp:
-  image: 'nginx:latest'
-  container_name: 'elp'
-  ports:
-   - 443:443
-  volumes:
-   - /ip4/127.0.0.1/tcp/5001:/usr/share/nginx/html/
- elparadisogonzalo:
-  image: 'nextcloud:latest'
-  container_name: 'elparadisogonzalo'
-  volumes:
-   - /ip4/127.0.0.1/tcp/5001:/var/www/html/
+
+# Use an official Ruby image to build Jekyll site
+FROM ruby:2.7-slim
+
+# Install dependencies for Jekyll and Node.js (to run app.js)
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  libssl-dev \
+  libreadline-dev \
+  zlib1g-dev \
+  nodejs \
+  npm \
+  && rm -rf /var/lib/apt/lists/*
+
+# Install Jekyll
+RUN gem install bundler jekyll
+
+# Create a directory for the app
+WORKDIR /app
+
+# Copy the Jekyll site content into the container
+COPY . /app
+
+# Install required Ruby gems (from Gemfile)
+RUN bundle install
+
+# Install required Node.js packages
+RUN npm install
+
+# Expose the port the app will run on
+EXPOSE 4000
+
+# Run the Jekyll server
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--port", "4000"]
