@@ -1,0 +1,42 @@
+{
+  "remappings": [
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "@uniswap/v3-core/=lib/v3-core/",
+    "@uniswap/v3-periphery/=lib/v3-periphery/",
+    "ds-test/=lib/solmate/lib/ds-test/src/",
+    "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+    "forge-std/=lib/forge-std/src/",
+    "murky/=lib/murky/",
+    "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+    "openzeppelin/=lib/openzeppelin-contracts/contracts/",
+    "solady/=lib/solady/src/",
+    "solmate/=lib/solmate/src/",
+    "swap-router-contracts/=lib/swap-router-contracts/contracts/",
+    "v3-core/=lib/v3-core/contracts/",
+    "v3-periphery/=lib/v3-periphery/contracts/"
+  ],
+  "optimizer": {
+    "enabled": true,
+    "runs": 1000
+  },
+  "metadata": {
+    "useLiteralContent": false,
+    "bytecodeHash": "ipfs",
+    "appendCBOR": true
+  },
+  "outputSelection": {
+    "*": {
+      "*": [
+        "evm.bytecode",
+        "evm.deployedBytecode",
+        "devdoc",
+        "userdoc",
+        "metadata",
+        "abi"
+      ]
+    }
+  },
+  "evmVersion": "london",
+  "viaIR": true,
+  "libraries": {}
+}
