@@ -12,7 +12,7 @@
 This repository is designed to interact with **Ethereum & Binance Smart Chain (BSC)** networks, utilizing Web3, GitHub CLI, Node.js, and Google Cloud CLI. It is linked to the **Unstoppable Domain**: `elparadisogonzalo.com`.  
 
 ## 📌 Wallet & Contract Information  
-- **Ethereum Wallet Address**: [`0x802ba6a112f4a7bbbc2d63c8ef4bc14dfcbe6245`](https://etherscan.io/address/0x802ba6a112f4a7bbbc2d63c8ef4bc14dfcbe6245)  
+- **Ethereum Wallet Address**: [`0x802ba6a112f4a7bbbc2d63c8ef4bc14dfcbe6245`](https://etherscan.io/address/0x4E8C73E7f243D12B7A5571200609523A4890beff)
 - **Binance Smart Chain (BSC) Contract Address**: [`0xB8c77482e45F1F44dE1745F52C74426C631bDD52`](https://bscscan.com/address/0xB8c77482e45F1F44dE1745F52C74426C631bDD52)  
 - **Unstoppable Domain**: `elparadisogonzalo.com`  
 - **Token ID**: `107683363991053490216546573917850500707450188666044900143399111250914661716584`
