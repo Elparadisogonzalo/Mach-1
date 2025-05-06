@@ -1,0 +1,148 @@
+#!/bin/bash
+
+# Google Cloud Helper Script for Termux
+# This script automates common gcloud commands to streamline workflows.
+
+# Function to display usage instructions
+function usage() {
+    echo "Google Cloud Helper Script"
+    echo "Usage:"
+    echo "  ./gcloud-helper.sh auth login                 - Log in to Google Cloud"
+    echo "  ./gcloud-helper.sh auth revoke                - Revoke access"
+    echo "  ./gcloud-helper.sh project set <project_id>   - Set the active project"
+    echo "  ./gcloud-helper.sh compute create <instance_name> <zone>  - Create a new VM instance"
+    echo "  ./gcloud-helper.sh compute list               - List all VM instances"
+    echo "  ./gcloud-helper.sh compute delete <instance_name> - Delete a VM instance"
+    echo "  ./gcloud-helper.sh storage create <bucket_name> - Create a Cloud Storage bucket"
+    echo "  ./gcloud-helper.sh storage list               - List all Cloud Storage buckets"
+    echo "  ./gcloud-helper.sh deploy <app_name> <region>  - Deploy an app on App Engine"
+}
+
+# Function to authenticate (log in) to Google Cloud
+function auth_login() {
+    echo "Logging in to Google Cloud..."
+    gcloud auth login
+}
+
+# Function to revoke Google Cloud access
+function auth_revoke() {
+    echo "Revoking Google Cloud access..."
+    gcloud auth revoke
+}
+
+# Function to set the active Google Cloud project
+function set_project() {
+    echo "Setting the active project to $1..."
+    gcloud config set project $1
+}
+
+# Function to create a new VM instance
+function create_instance() {
+    echo "Creating a new VM instance named $1 in zone $2..."
+    gcloud compute instances create $1 --zone=$2
+}
+
+# Function to list all VM instances
+function list_instances() {
+    echo "Listing all VM instances..."
+    gcloud compute instances list
+}
+
+# Function to delete a VM instance
+function delete_instance() {
+    echo "Deleting VM instance named $1..."
+    gcloud compute instances delete $1 --quiet
+}
+
+# Function to create a Cloud Storage bucket
+function create_bucket() {
+    echo "Creating Cloud Storage bucket named $1..."
+    gcloud storage buckets create gs://$1
+}
+
+# Function to list all Cloud Storage buckets
+function list_buckets() {
+    echo "Listing all Cloud Storage buckets..."
+    gcloud storage buckets list
+}
+
+# Function to deploy an app to App Engine
+function deploy_app() {
+    echo "Deploying app $1 to region $2..."
+    gcloud app browse --region=$2
+}
+
+# Check if a command is passed
+if [ $# -lt 1 ]; then
+    usage
+    exit 1
+fi
+
+# Parse the command passed to the script
+case "$1" in
+    auth)
+        if [ "$2" == "login" ]; then
+            auth_login
+        elif [ "$2" == "revoke" ]; then
+            auth_revoke
+        else
+            usage
+        fi
+        ;;
+    project)
+        if [ -z "$2" ]; then
+            echo "Error: Please provide a project ID."
+            usage
+            exit 1
+        fi
+        set_project $2
+        ;;
+    compute)
+        if [ "$2" == "create" ]; then
+            if [ -z "$3" ] || [ -z "$4" ]; then
+                echo "Error: Please provide instance name and zone."
+                usage
+                exit 1
+            fi
+            create_instance $3 $4
+        elif [ "$2" == "list" ]; then
+            list_instances
+        elif [ "$2" == "delete" ]; then
+            if [ -z "$3" ]; then
+                echo "Error: Please provide instance name."
+                usage
+                exit 1
+            fi
+            delete_instance $3
+        else
+            usage
+        fi
+        ;;
+    storage)
+        if [ "$2" == "create" ]; then
+            if [ -z "$3" ]; then
+                echo "Error: Please provide bucket name."
+                usage
+                exit 1
+            fi
+            create_bucket $3
+        elif [ "$2" == "list" ]; then
+            list_buckets
+        else
+            usage
+        fi
+        ;;
+    deploy)
+        if [ -z "$2" ] || [ -z "$3" ]; then
+            echo "Error: Please provide app name and region."
+            usage
+            exit 1
+        fi
+        deploy_app $2 $3
+        ;;
+    *)
+        echo "Error: Invalid command."
+        usage
+        exit 1
+        ;;
+esac
