@@ -1,0 +1,122 @@
+#!/bin/bash
+
+# Git Helper Script for Termux
+# This script automates basic Git commands to streamline workflows.
+
+# Function to display usage instructions
+function usage() {
+    echo "Git Helper Script"
+    echo "Usage:"
+    echo "  ./git-helper.sh clone <repo_url>                - Clone a repository"
+    echo "  ./git-helper.sh pull <branch_name>              - Pull latest changes from a branch"
+    echo "  ./git-helper.sh commit <commit_message>         - Commit changes with a message"
+    echo "  ./git-helper.sh push <branch_name>              - Push changes to a branch"
+    echo "  ./git-helper.sh checkout <branch_name>          - Checkout a specific branch"
+    echo "  ./git-helper.sh status                         - Check the current Git status"
+    echo "  ./git-helper.sh log                            - View Git log"
+}
+
+# Function to clone a repository
+function clone_repo() {
+    echo "Cloning repository from $1..."
+    git clone $1
+}
+
+# Function to pull the latest changes from a branch
+function pull_changes() {
+    echo "Pulling latest changes from branch $1..."
+    git checkout $1
+    git pull origin $1
+}
+
+# Function to commit changes
+function commit_changes() {
+    echo "Committing changes with message: $1"
+    git add .
+    git commit -m "$1"
+}
+
+# Function to push changes
+function push_changes() {
+    echo "Pushing changes to branch $1..."
+    git push origin $1
+}
+
+# Function to checkout a branch
+function checkout_branch() {
+    echo "Checking out branch $1..."
+    git checkout $1
+}
+
+# Function to show Git status
+function git_status() {
+    echo "Git status:"
+    git status
+}
+
+# Function to show Git log
+function git_log() {
+    echo "Git log:"
+    git log --oneline --graph --decorate --all
+}
+
+# Check if a command is passed
+if [ $# -lt 1 ]; then
+    usage
+    exit 1
+fi
+
+# Parse the command passed to the script
+case "$1" in
+    clone)
+        if [ -z "$2" ]; then
+            echo "Error: Please provide a repository URL."
+            usage
+            exit 1
+        fi
+        clone_repo $2
+        ;;
+    pull)
+        if [ -z "$2" ]; then
+            echo "Error: Please provide a branch name."
+            usage
+            exit 1
+        fi
+        pull_changes $2
+        ;;
+    commit)
+        if [ -z "$2" ]; then
+            echo "Error: Please provide a commit message."
+            usage
+            exit 1
+        fi
+        commit_changes "$2"
+        ;;
+    push)
+        if [ -z "$2" ]; then
+            echo "Error: Please provide a branch name."
+            usage
+            exit 1
+        fi
+        push_changes $2
+        ;;
+    checkout)
+        if [ -z "$2" ]; then
+            echo "Error: Please provide a branch name."
+            usage
+            exit 1
+        fi
+        checkout_branch $2
+        ;;
+    status)
+        git_status
+        ;;
+    log)
+        git_log
+        ;;
+    *)
+        echo "Error: Invalid command."
+        usage
+        exit 1
+        ;;
+esac
