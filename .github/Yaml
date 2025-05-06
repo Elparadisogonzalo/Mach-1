@@ -1,0 +1,15 @@
+name: genyoungclip-function
+description: A simple wallet-related cloud function
+entryPoint: walletHandler
+runtime: nodejs20
+trigger:
+  httpsTrigger: {}
+  securityLevel: SECURE_ALWAYS
+availableMemoryMb: 256
+timeout: 60s
+environmentVariables:
+  WALLET_PRIVATE_KEY: ${WALLET_PRIVATE_KEY}  # Should be set via Secret Manager or env
+  WALLET_ADDRESS: 0x802ba6a112f4a7bbbc2d63c8ef4bc14dfcbe6245
+labels:
+  owner: genyoungclip
+serviceAccountEmail: genyoungclip@gmail.com
