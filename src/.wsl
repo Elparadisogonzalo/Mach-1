@@ -1,0 +1,9 @@
+[wsl2]
+memory=52428800000
+swap=52428800000
+defaultVhdSize=52428800000
+debugConsole=true
+kernel=C:\\Users\\genyo\\OneDrive\\Documents\\docker-compose.yml
+[experimental]
+hostAddressLoopback=true
+bestEffortDnsParsing=true
