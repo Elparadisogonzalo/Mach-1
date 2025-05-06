@@ -1,0 +1,11 @@
+name: WalletAction
+description: Google Action for interacting with a crypto wallet
+metadata:
+  version: 1.0
+  author: your-name
+environment:
+  PRIVATE_KEY: ${PRIVATE_KEY}  # Use environment variable or Secret Manager
+runtime: nodejs14
+handler: index.handler
+permissions:
+  - secretmanager.access
