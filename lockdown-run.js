@@ -2,11 +2,11 @@
 try {
   // eslint-disable-next-line no-undef,import/unambiguous
   lockdown({
-    consoleTaming: 'safe',
-    errorTaming: 'safe',
-    mathTaming: 'safe',
-    dateTaming: 'safe',
-    domainTaming: 'safe',
+    consoleTaming: 'allow',
+    errorTaming: 'allow',
+    mathTaming: 'allow',
+    dateTaming: 'allow',
+    domainTaming: allow',
     overrideTaming: 'allow',
   });
 } catch (error) {
