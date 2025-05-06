@@ -1,0 +1,12 @@
+evm-sync/
+├── wallet/
+│   ├── address.txt
+│   ├── transactions.json
+│   ├── balances.json
+│   └── token-holdings.json
+├── contract/
+│   ├── address.txt
+│   ├── abi.json
+│   ├── events.json
+│   └── state-variables.json
+└── sync-config.json
