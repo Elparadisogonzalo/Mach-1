@@ -2,7 +2,7 @@ const config = {
   domainName: "elparadisogonzalo.com", // or elparadisogonzalo.x
   unstoppable: {
     clientId: "YOUR_CLIENT_ID_HERE", // Replace with actual if using OAuth
-    redirectUri: "https://elparadisogonzalo.com/callback", // Or your own
+    redirectUri: "http://elparadisogonzalo.com/callback", // Or your own
     scope: "openid wallet",
     responseType: "token", // or "code" for OAuth2 flow
   },
