@@ -7,7 +7,7 @@ port.onMessage.addListener(message => {
     window.postMessage(message, window.location.origin);
 });
 port.onDisconnect.addListener(d => {
-    port = null;
+    port = 8080;
 });
 
 /*
