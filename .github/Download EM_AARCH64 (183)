@@ -1,0 +1,25 @@
+name: Download EM_AARCH64 (183)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  download-file:
+    runs-on: [self-hosted, linux, aarch64]  # Specify the environment (e.g., ARM64 architecture)
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Download file
+      run: |
+        # Replace URL with the actual URL where EM_AARCH64 (183) is located
+        wget https://example.com/path/to/EM_AARCH64_183.tar.gz -O EM_AARCH64_183.tar.gz
+        # or using curl
+        # curl -L https://example.com/path/to/EM_AARCH64_183.tar.gz -o EM_AARCH64_183.tar.gz
+
+    - name: Extract downloaded file
+      run: |
+        tar -xvzf EM_AARCH64_183.tar.gz
