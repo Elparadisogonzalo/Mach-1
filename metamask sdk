@@ -14,7 +14,7 @@ const MMSDK = new MetaMaskSDK({
   dappMetadata: {
     name: "Example Node.js Dapp",
   },
-  infuraAPIKey: 6267a9f5a93049eabb19549fcc7acc40,
+  infuraAPIKey:429c528a2c524a0ba1fa538343d025b2,
   // Other options.
 })
 
