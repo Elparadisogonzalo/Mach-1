@@ -1,0 +1,21 @@
+POST /api/v4/projects/PROJECT_ID/product_analytics/request/load?queryType=multi
+
+{
+    "query":{
+  "dimensions": [
+    "TrackedEvents.docEncoding",
+    "TrackedEvents.docHost",
+    "TrackedEvents.docPath",
+    "TrackedEvents.docSearch",
+    "TrackedEvents.eventType",
+    "TrackedEvents.localTzOffset",
+    "TrackedEvents.pageTitle",
+    "TrackedEvents.src",
+    "TrackedEvents.utcTime",
+    "TrackedEvents.vpSize"
+  ],
+  "order": {
+    "TrackedEvents.apiKey": "asc"
+  }
+    }
+}
