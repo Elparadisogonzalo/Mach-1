@@ -1,1 +1,1 @@
-cp config/puma.example.development.rb config/puma.rb
+cp config/elparadisogonzalo.com.development.rb config/puma.rb
