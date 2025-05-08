@@ -1,0 +1,1 @@
+cp config/puma.example.development.rb config/puma.rb
