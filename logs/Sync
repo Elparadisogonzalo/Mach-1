@@ -5,13 +5,12 @@
     <domain>elparadisogonzalo.com</domain>
   </user>
   <syncSettings>
-    <direction>two-way</direction>
+    <direction>one-way</direction>
     <frequency>daily</frequency>
-    <lastSynced>2025-04-25T12:00:00Z</lastSynced>
     <data>
       <item type="emails" enabled="true" />
       <item type="files" enabled="true" />
-      <item type="contacts" enabled="false" />
+      <item type="contacts" enabled="true" />
     </data>
     <destination>
       <server>sync.elparadisogonzalo.com</server>
