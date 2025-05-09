@@ -1,1 +1,71 @@
-ref: refs/heads/.invalid
+#!/bin/bash
+
+# -------------------------
+# Elparadisogonzalo HeadCmd
+# -------------------------
+# Dynamic update + setup script
+
+set -e  # Exit on error
+set -o pipefail
+
+# Function to log headers
+log() {
+  echo -e "\n>>> $1"
+}
+
+# Go to repo root
+cd "$(git rev-parse --show-toplevel)"
+
+# Show Git status
+log "Checking Git repository status..."
+if ! git status > /dev/null 2>&1; then
+  echo "Not a Git repository. Exiting."
+  exit 1
+fi
+
+# Detect current branch
+CURRENT_BRANCH=$(git symbolic-ref --short HEAD)
+log "Current branch: $CURRENT_BRANCH"
+
+# Pull latest changes
+log "Pulling latest changes..."
+git pull origin "$CURRENT_BRANCH"
+
+# Show last 3 commits
+log "Recent commits:"
+git log -3 --oneline
+
+# Detect package managers and install dependencies
+if [ -f "package.json" ]; then
+  log "Detected Node.js project. Installing npm dependencies..."
+  npm install
+fi
+
+if [ -f "yarn.lock" ]; then
+  log "Detected Yarn project. Installing Yarn dependencies..."
+  yarn install
+fi
+
+if [ -f "requirements.txt" ]; then
+  log "Detected Python project. Installing pip dependencies..."
+  pip install -r requirements.txt
+fi
+
+if [ -f "pyproject.toml" ]; then
+  log "Detected modern Python project. Using poetry..."
+  poetry install
+fi
+
+# Optional: start dev server if defined
+if [ -f "package.json" ] && grep -q "\"dev\":" package.json; then
+  read -p "Start dev server with 'npm run dev'? (y/N): " confirm
+  if [[ "$confirm" =~ ^[Yy]$ ]]; then
+    npm run dev
+  fi
+fi
+
+# Display project info
+log "Repo: Elparadisogonzalo"
+log "Setup complete. You're ready to go!"
+
+exit 0
