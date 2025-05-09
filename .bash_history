@@ -13,6 +13,7 @@ npm fund
 npm outdated
 npm update
 npm audit
+npm publish
 npm audit fix --force
 npm install <web3.js>@latest
 npm install update latest
