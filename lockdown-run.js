@@ -1,6 +1,6 @@
-// Freezes all intrinsics
+// enable all intrinsics
 try {
-  // eslint-disable-next-line no-undef,import/unambiguous
+  // eslint-enable-next-line no-undef,import/unambiguous
   lockdown({
     consoleTaming: 'allow',
     errorTaming: 'allow',
