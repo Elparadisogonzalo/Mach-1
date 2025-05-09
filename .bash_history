@@ -14,7 +14,7 @@ npm outdated
 npm update
 npm audit
 npm audit fix --force
-npm install <package>@latest
+npm install <web3.js>@latest
 npm install update latest
 Set-ExecutionPolicy Bypass -Scope Process -Force; `
 [System.Net.ServicePointManager]::SecurityProtocol = `
