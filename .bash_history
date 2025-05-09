@@ -1,4 +1,4 @@
-git clone https://github.com/koagonzalo11/repo.git
+git clone git@github.com:Elparadisogonzalo/assets.git 
 npm login
 npm install -g npm@11.2.0
 "engines": {
