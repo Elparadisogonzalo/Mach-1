@@ -4,11 +4,11 @@
   "dockerFile": "Dockerfile",
   "workspaceFolder": "/app",
   "extensions": [
-    "ms-vscode.vscode-node-azure-pack", 
-    "dbaeumer.vscode-eslint", 
+    "", 
+    "dbaeumer.elparadisogonzalo", 
     "jekyll.jekyll",
-    "ms-azuretools.vscode-docker",
-    "esbenp.prettier-vscode"
+    "elparadisogonzalo.com",
+    "esbenp.prettier-custom"
   ],
   "settings": {
     "editor.formatOnSave": true,
@@ -30,13 +30,16 @@
     }
   },
   "forwardPorts": [
-    4000,
+    4000
+    22
+    8551
+    8080,
     3000
   ],
-  "remoteUser": "vscode",
+  "remoteUser": working-copy",
   "mounts": [
     "source=${localWorkspaceFolder},target=/app,type=bind"
   ],
-  "appPort": [4000, 3000],
-  "devPort": [4000, 3000]
+  "appPort": [4000, 3000,22,8080,8551],
+  "devPort": [4000, 3000,22,8080'8551]
 }
