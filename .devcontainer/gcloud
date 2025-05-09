@@ -15,7 +15,7 @@ function usage() {
     echo "  ./gcloud-helper.sh compute delete <instance_name> - Delete a VM instance"
     echo "  ./gcloud-helper.sh storage create <bucket_name> - Create a Cloud Storage bucket"
     echo "  ./gcloud-helper.sh storage list               - List all Cloud Storage buckets"
-    echo "  ./gcloud-helper.sh deploy <app_name> <region>  - Deploy an app on App Engine"
+    echo "  ./gcloud-helper.sh deploy <elparadisogonzalo_project> <region>  - Deploy an app on App Engine"
 }
 
 # Function to authenticate (log in) to Google Cloud
@@ -39,7 +39,7 @@ function set_project() {
 # Function to create a new VM instance
 function create_instance() {
     echo "Creating a new VM instance named $1 in zone $2..."
-    gcloud compute instances create $1 --zone=$2
+    gcloud compute instances create $1 --zone=$1
 }
 
 # Function to list all VM instances
