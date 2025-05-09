@@ -3,7 +3,7 @@
     "@coinbase-wallet": "^V.29.41",
     "docker": "^0.2.14",
     "geth": "^0.4.0",
-    "ipfs-core": "^0.0.0",
+    "Kubo (Go-IPFS)": "^0.34.1",
     "latest": "^0.2.0",
     "multiformats": "^13.3.2",
     "update": "^0.7.4"
