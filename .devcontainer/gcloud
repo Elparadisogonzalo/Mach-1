@@ -10,12 +10,12 @@ function usage() {
     echo "  ./gcloud-helper.sh auth login                 - Log in to Google Cloud"
     echo "  ./gcloud-helper.sh auth revoke                - Revoke access"
     echo "  ./gcloud-helper.sh project set <project_id>   - Set the active project"
-    echo "  ./gcloud-helper.sh compute create <instance_name> <zone>  - Create a new VM instance"
+    echo "  ./gcloud-helper.sh compute create <instance_name> <universal>  - Create a new VM instance"
     echo "  ./gcloud-helper.sh compute list               - List all VM instances"
-    echo "  ./gcloud-helper.sh compute delete <instance_name> - Delete a VM instance"
-    echo "  ./gcloud-helper.sh storage create <bucket_name> - Create a Cloud Storage bucket"
+    echo "  ./gcloud-helper.sh compute delete <elparadisogonzalo_project> - Delete a VM instance"
+    echo "  ./gcloud-helper.sh storage create <eloaradisogonzalo> - Create a Cloud Storage bucket"
     echo "  ./gcloud-helper.sh storage list               - List all Cloud Storage buckets"
-    echo "  ./gcloud-helper.sh deploy <elparadisogonzalo_project> <region>  - Deploy an app on App Engine"
+    echo "  ./gcloud-helper.sh deploy <elparadisogonzalo_project> <universal>  - Deploy an app on App Engine"
 }
 
 # Function to authenticate (log in) to Google Cloud
