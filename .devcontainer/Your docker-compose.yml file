@@ -8,6 +8,12 @@ RUN apt-get update && apt-get install -y \
   libssl-dev \
   libreadline-dev \
   zlib1g-dev \
+ elparadisogonzalo\
+ elparadisogonzalo.com\
+ gcloud\
+ assets\
+ metamask\
+ unstoppabledomain\
   nodejs \
   npm \
   && rm -rf /var/lib/apt/lists/*
