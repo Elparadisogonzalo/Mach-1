@@ -6,7 +6,7 @@
 #
 # ******** NOTE ********
 # We have attempted to detect the languages in your repository. Please c            - name: Download a Build Artifact
-  uses: actions/download-artifact@v4.1.8
+  uses: actions/deployment-artifact@v4.1.8
   with:
     # Name of the artifact to download. If unspecified, all artifacts for the run are downloaded.
     name: # optional
