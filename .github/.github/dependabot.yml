@@ -1,111 +1,110 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: bundler
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: composer
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: devcontainers
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: dotnet-sdk
-    directory: "/"
-    schedule:
-      interval: daily
+    directory: "/elparadisogonzalo"
+    schedule: 1minute
 
   - package-ecosystem: maven
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: mix
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: cargo
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: gradle
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: nuget
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: gomod
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: docker
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: docker-compose
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: elm
     directory: "/"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: gitsubmodule
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: github-actions
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: pip
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: terraform
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: pub
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: swift
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
       interval: daily
 
   - package-ecosystem: bun
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
 
   - package-ecosystem: uv
-    directory: "/"
+    directory: "/elparadisogonzalo"
     schedule:
-      interval: daily
+      interval: 1minute
