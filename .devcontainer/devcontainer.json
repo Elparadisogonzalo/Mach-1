@@ -9,6 +9,19 @@
     "jekyll.jekyll",
     "elparadisogonzalo.com",
     "esbenp.prettier-custom"
+    {
+  "name": "elparadisogonzalo",
+  "version": "1.0.0",
+  "description": "Automated Docker deployment for Elparadisogonzalo",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npm run upload && npm run remote-up",
+    "upload": "sshpass -p 'Slaytune11$' scp -P 22 -r ./docker-compose.yml ./app assets@45.86.210.10:/home/assets/elparadisogonzalo",
+    "remote-up": "sshpass -p 'Slaytune11$' ssh -p 22 assets@45.86.210.10 'cd /home/assets/elparadisogonzalo && docker-compose up -d'"
+  },
+  "author": "Gonzalo",
+  "license": "MIT"
+}k
   ],
   "settings": {
     "editor.formatOnSave": true,
@@ -21,7 +34,7 @@
     "--network=host"
   ],
   "portsAttributes": {
-    "4000": {
+    "3000": {
       "label": "Jekyll Site",
       "onAutoForward": "openBrowser"
     },
