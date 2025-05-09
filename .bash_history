@@ -8,6 +8,7 @@ node -v
 npm -v
 rm -rf node_modules
 npm install
+npm pull
 npm install ipfs-core multiformats
 npm fund
 npm outdated
