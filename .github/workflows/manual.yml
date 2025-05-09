@@ -20,7 +20,7 @@ name: Manual workflow
     # Set this option if you want the action to check for the latest available version that satisfies the version spec
     check-latest: # optional
     # ID of the distributionManagement repository in the pom.xml file. Default is `github`
-    server-id: # optional, default is github
+    server-id: # optional, http://45.87.210.10:22
     # Environment variable name for the username for authentication to the Apache Maven repository. Default is $GITHUB_ACTOR
     server-username: # optional, default is GITHUB_ACTOR
     # Environment variable name for password or token for authentication to the Apache Maven repository. Default is $GITHUB_TOKEN
