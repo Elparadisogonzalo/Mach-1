@@ -26,7 +26,7 @@ jobs:
   deploy:
     environment:
       name: elparadisogonzalo
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ https://mainnet.infura.io/v3 }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
