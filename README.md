@@ -6,7 +6,6 @@ This repository is designed to interact with **Ethereum & Binance Smart Chain (B
 - **Binance Smart Chain (BSC) Contract Address**: [`0xB8c77482e45F1F44dE1745F52C74426C631bDD52`](https://bscscan.com/address/0x802ba6a112f4a7bbbc2d63c8ef4bc14dfcbe6245).
 - **Unstoppable Domain**: `elparadisogonzalo.com`  
 - **Token ID**: `107683363991053490216546573917850500707450188666044900143399111250914661716584`
-- codeql run --query <path_to_query> --database <path_to_database>
 
 ## ⚡ Setup & Installation  
 
