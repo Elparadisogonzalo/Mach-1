@@ -13,7 +13,6 @@ This repository is designed to interact with **Ethereum & Binance Smart Chain (B
 ```bash
 git clone https://github.com/koagonzalo11/asset3.git
 cd asset3
-Certainly! Here’s a single block of code from “Install Dependencies” to “Contributions” for easy copying:
 
 ### 2️⃣ Install Dependencies  
 Make sure you have **Node.js** and **npm** installed. Then, run:  
