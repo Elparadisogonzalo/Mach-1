@@ -1,59 +1,36 @@
+from web3 import Web3
+import json
+# Replace with your Ethereum node endpoint
+infura_url = "https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID"
+# Connect to the Ethereum node
+web3 = Web3(Web3.HTTPProvider(infura_url))
+# Check connection
+if web3.isConnected():
+    print("Connected to Ethereum node")
+else:
+    print("Failed to connect")
+    exit()
+# Your contract address
+contract_address = "0x4e8c73e7f243d12b7a5571200609523a4890beff"
+# [{"inputs":[{"internalType":"string","name":"name","type":"string"},{"internalType":"string","name":"symbol","type":"string"},{"internalType":"string","name":"_tokenURI","type":"string"},{"internalType":"bytes32","name":"_merkleRoot","type":"bytes32"},{"internalType":"uint256","name":"_maxTotalMintedSupply","type":"uint256"},{"internalType":"uint256","name":"_originalChainId","type":"uint256"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"AlreadyClaimed","type":"error"},{"inputs":[],"name":"CannotClaimZero","type":"error"},{"inputs":[],"name":"InvalidProof","type":"error"},{"inputs":[],"name":"Unauthorized","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Claim","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"},{"indexed":true,"internalType":"address","name":"sender","type":"address"}],"name":"CrosschainBurn","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"},{"indexed":true,"internalType":"address","name":"sender","type":"address"}],"name":"CrosschainMint","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[],"name":"DOMAIN_SEPARATOR","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32[]","name":"proof","type":"bytes32[]"},{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"claim","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"claimed","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_from","type":"address"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"crosschainBurn","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_to","type":"address"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"crosschainMint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxTotalMintedSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"merkleRoot","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"nonces","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"originalChainId","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"},{"internalType":"uint256","name":"deadline","type":"uint256"},{"internalType":"uint8","name":"v","type":"uint8"},{"internalType":"bytes32","name":"r","type":"bytes32"},{"internalType":"bytes32","name":"s","type":"bytes32"}],"name":"permit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"_interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"pure","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalMintedSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+contract_abi = json.loads("""
 [
-  { "code": "am", "name": "አማርኛ" },
-  { "code": "ar", "name": "العربية" },
-  { "code": "bg", "name": "български" },
-  { "code": "bn", "name": "বাংলা" },
-  { "code": "ca", "name": "Català" },
-  { "code": "cs", "name": "Čeština" },
-  { "code": "da", "name": "Dansk" },
-  { "code": "de", "name": "Deutsch" },
-  { "code": "el", "name": "ελληνικά" },
-  { "code": "en", "name": "English" },
-  { "code": "es", "name": "Español" },
-  { "code": "es_419", "name": "Español (Latin America)" },
-  { "code": "et", "name": "Estonian" },
-  { "code": "fa", "name": "فارسی" },
-  { "code": "fi", "name": "Suomi" },
-  { "code": "fil", "name": "Filipino" },
-  { "code": "fr", "name": "Français" },
-  { "code": "gu", "name": "ગુજરાત" },
-  { "code": "he", "name": "עברית" },
-  { "code": "hi", "name": "मानक हिन्दी" },
-  { "code": "hn", "name": "हिन्दी" },
-  { "code": "hr", "name": "Hrvatski" },
-  { "code": "ht", "name": "Kreyòl ayisyen" },
-  { "code": "hu", "name": "Magyar" },
-  { "code": "id", "name": "Bahasa Indonesia" },
-  { "code": "it", "name": "Italiano" },
-  { "code": "ja", "name": "日本語" },
-  { "code": "kn", "name": "ಕನ್ನಡ" },
-  { "code": "ko", "name": "한국어" },
-  { "code": "lt", "name": "Lietuviškai" },
-  { "code": "lv", "name": "Latvian" },
-  { "code": "ml", "name": "മലയാളം" },
-  { "code": "mr", "name": "मराठी" },
-  { "code": "ms", "name": "Malay" },
-  { "code": "nl", "name": "Nederlands" },
-  { "code": "no", "name": "Norwegian" },
-  { "code": "ph", "name": "Pilipino" },
-  { "code": "pl", "name": "Polskie" },
-  { "code": "pt", "name": "Português" },
-  { "code": "pt_BR", "name": "Português (Brazillian)" },
-  { "code": "pt_PT", "name": "Português (European)" },
-  { "code": "ro", "name": "Limba română" },
-  { "code": "ru", "name": "Русский" },
-  { "code": "sk", "name": "Slovenčina" },
-  { "code": "sl", "name": "Slovenščina" },
-  { "code": "sr", "name": "српски" },
-  { "code": "sv", "name": "Svenska" },
-  { "code": "sw", "name": "Swahili" },
-  { "code": "ta", "name": "தமிழ்" },
-  { "code": "te", "name": "తెలుగు" },
-  { "code": "th", "name": "ไทย" },
-  { "code": "tl", "name": "Wikang Tagalog" },
-  { "code": "tr", "name": "Türkçe" },
-  { "code": "uk", "name": "Українська мова" },
-  { "code": "vi", "name": "Tiếng Việt" },
-  { "code": "zh_CN", "name": "中文(简体)" },
-  { "code": "zh_TW", "name": "中文(繁體)" }
+  {
+    "constant": true,
+    "inputs": [{"name": "_tokenId", "type": "uint256"}],
+    "name": "ownerOf",
+    "outputs": [{"name": "", "type": "address"}],
+    "type": "function"
+  }
 ]
+""")
+# Create contract instance
+contract = web3.eth.contract(address=contract_address, abi=contract_abi)
+# Example token ID (0x802ba6A112F4A7BBbC2d63c8EF4bC14DFCBe6245)
+token_id = 107683363991053490216546573917850500707450188666044900143399111250914661716584
+# Call ownerOf method
+try:
+    owner = contract.functions.ownerOf(token_id).call()
+    print(f"Owner of token {token_id}: {owner}")
+except Exception as e:
+    print(f"Error calling contract function: {e}")

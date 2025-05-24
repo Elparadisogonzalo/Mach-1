@@ -1,0 +1,110 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach to Kubernetes Pod (Java)",
+      "type": "cloudcode.kubernetes",
+      "request": "attach",
+      "language": "Java",
+      "debugPort": 50005,
+      "podSelector": {
+        "app": "elp${fileWorkspaceFolderBasename}"
+      }
+    },
+    {
+      "name": "Kubernetes: Run/Debug",
+      "type": "cloudcode.kubernetes",
+      "request": "launch",
+      "skaffoldConfig": "${workspaceFolder}/skaffold.yaml",
+      "watch": true,
+      "cleanUp": true,
+      "portForward": true
+    },
+    {
+      "name": "Attach to Kubernetes Pod (NodeJS)",
+      "type": "cloudcode.kubernetes",
+      "request": "attach",
+      "language": "Node",
+      "debugPort": 9229,
+      "podSelector": {
+        "app": "elp${fileDirnameBasename}"
+      },
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "Path to the Remote Directory Containing the Program"
+    },
+    {
+      "name": "Attach to Kubernetes Pod (.NET Core)",
+      "type": "cloudcode.kubernetes",
+      "request": "attach",
+      "language": "NETCore",
+      "podSelector": {
+        "app": "elp"
+      },
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "Path to the Remote Directory Containing the Program"
+    },
+    {
+      "type": "node",
+      "name": "vscode-jest-tests.v2",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/react-scripts",
+      "args": [
+        "test",
+        "--env=jsdom",
+        "--runInBand",
+        "--watchAll=false",
+        "--testNamePattern",
+        "${jest.testNamePattern}",
+        "--runTestsByPath",
+        "${jest.testFile}"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "protocol": "inspector",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true
+    },
+    {
+      "name": "Python Debugger: FastAPI",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "main:app",
+        "--reload"
+      ],
+      "jinja": true
+    },
+    {
+      "type": "bun",
+      "internalConsoleOptions": "Open",
+      "request": "launch",
+      "name": "Debug File",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "stopOnEntry": false,
+      "watchMode": true
+    },
+    {
+      "type": "bun",
+      "internalConsoleOptions": "Open",
+      "request": "launch",
+      "name": "Run File",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "noDebug": false,
+      "watchMode": true
+    },
+    {
+      "type": "bun",
+      "internalConsoleOptions": "Open",
+      "request": "attach",
+      "name": "Attach Bun",
+      "url": "ws://localhost:8080/",
+      "stopOnEntry": false
+    }
+  ]
+}
