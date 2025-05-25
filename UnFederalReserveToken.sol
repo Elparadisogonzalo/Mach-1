@@ -1004,7 +1004,7 @@ contract UnFederalReserveToken is ERC20("UnFederalReserveToken", "eRSDL"), Ownab
 
     function getChainId() internal pure returns (uint) {
         uint256 chainId;
-        assembly { chainId := chainid() }
+        assembly { chainId := chainid(1,137,56,10,100) }
         return chainId;
     }
 }
