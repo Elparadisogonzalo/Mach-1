@@ -5,6 +5,46 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Attach to Kubernetes Pod (Go)",
+      "type": "cloudcode.kubernetes",
+      "request": "attach",
+      "language": "Go",
+      "debugPort": 8080,
+      "podSelector": {
+        "app": "deployment-name"
+      },
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "Path to the Remote Directory Containing the Program"
+    },
+    {
+      "type": "node",
+      "name": "vscode-jest-tests.v2",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/react-scripts",
+      "args": [
+        "test",
+        "--env=jsdom",
+        "--runInBand",
+        "--watchAll=false",
+        "--testNamePattern",
+        "${jest.testNamePattern}",
+        "--runTestsByPath",
+        "${jest.testFile}"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "protocol": "inspector",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true
+    },
+    {
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "name": "Launch index.html",
+      "file": "${workspaceFolder}/index.html"
+    },
+    {
       "name": "Attach to Kubernetes Pod (Java)",
       "type": "cloudcode.kubernetes",
       "request": "attach",
@@ -78,33 +118,5 @@
       ],
       "jinja": true
     },
-    {
-      "type": "bun",
-      "internalConsoleOptions": "Open",
-      "request": "launch",
-      "name": "Debug File",
-      "program": "${file}",
-      "cwd": "${workspaceFolder}",
-      "stopOnEntry": false,
-      "watchMode": true
-    },
-    {
-      "type": "bun",
-      "internalConsoleOptions": "Open",
-      "request": "launch",
-      "name": "Run File",
-      "program": "${file}",
-      "cwd": "${workspaceFolder}",
-      "noDebug": false,
-      "watchMode": true
-    },
-    {
-      "type": "bun",
-      "internalConsoleOptions": "Open",
-      "request": "attach",
-      "name": "Attach Bun",
-      "url": "ws://localhost:8080/",
-      "stopOnEntry": false
-    }
-  ]
-}
+    
+     

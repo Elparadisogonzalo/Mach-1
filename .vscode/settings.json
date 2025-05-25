@@ -1,4 +1,21 @@
 {
   "eth-abi-interactive.nodeURI": "https://mainnet.infura.io/v3/429c528a2c524a0ba1fa538343d025b2",
-  "eth-abi-interactive.privateKeysFile": "C:\\Users\\genyo\\.eth-abi-interactive\\keys.json"
+  "eth-abi-interactive.privateKeysFile": "C:\\Users\\genyo\\.eth-abi-interactive\\keys.json",
+  "cloudcode.project": "elp",
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 8080,
+      "driver": "MariaDB",
+      "name": "elp",
+      "group": "localdisk",
+      "database": "myapp_db",
+      "username": "elparadisogonzalo"
+    }
+  ]
 }
