@@ -1,33 +1,5 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "mix",
-			"task": "Update all deps",
-			"problemMatcher": [],
-			"label": "mix: Update all deps",
-			"group": {
-				"kind": "build",
-				{{
   "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "1. Lint",
-      "type": "shell",
-      // ... other task properties
-    },
-    {
-      "task": "Update all deps",
-      "problemMatcher": [],
-      "label": "mix: Update all deps",
-      "group": {
-        "kind": "build"
-      }
-      // ... other task properties
-    }
-    // ... other tasks
-  ]
-
   "tasks": [
     {
       "label": "1. Lint",
@@ -69,6 +41,16 @@
       "group": "build"
     },
     {
+      "label": "mix: Update all deps",
+      "type": "shell",
+      "command": "mix deps.update --all",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
       "label": "🚀 Full Deploy",
       "dependsOn": [
         "1. Lint",
@@ -85,8 +67,4 @@
       }
     }
   ]
-}
-			}
-		}
-	]
 }
