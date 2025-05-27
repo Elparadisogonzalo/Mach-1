@@ -1,4 +1,4 @@
-version: '1.0'
+version: 'V0.118.3'
 services:
   termux:
     image: termux/android
@@ -9,5 +9,5 @@ services:
       - PATH=/data/data/com.termux/files/usr/bin:$PATH
     volumes:
       - /data/data/com.termux/files/home:/home/termux
-      - /sdcard:/gdrive
+      - /sdcard:/local storage
     network_mode: "host"
