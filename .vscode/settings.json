@@ -17,5 +17,119 @@
       "database": "myapp_db",
       "username": "elparadisogonzalo"
     }
+    {
+  "editor.fontSize": 10,
+  "files.autoSave": "onFocusChange",
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "git.openRepositoryInParentFolders": "always",
+  "git.enableSmartCommit": true,
+  "cmake.options.statusBarVisibility": "visible",
+  "editor.padding.bottom": 150,
+  "editor.padding.top": 150,
+  "editor.inlayHints.padding": true,
+  "screencastMode.verticalOffset": 90,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "git.autofetch": true,
+  "notebook.output.lineHeight": 8,
+  "git.verboseCommit": true,
+  "editor.tabSize": 2,
+  "window.autoDetectColorScheme": true,
+  "accessibility.dimUnfocused.opacity": 1,
+  "files.encoding": "utf8",
+  "workbench.editor.defaultBinaryEditor": "default",
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.limit.value": 75,
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.editor.scrollToSwitchTabs": true,
+  "workbench.editorLargeFileConfirmation": 10000000,
+  "workbench.editor.alwaysShowEditorActions": true,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.centeredLayoutFixedWidth": true,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.excludeDirty": true,
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.revealIfOpen": true,
+  "window.newWindowProfile": "Default",
+  "terminal.integrated.allowedLinkSchemes": [
+    "file", "http", "https", "mailto", "vscode", "vscode-insiders",
+    "git", "api", "pki", "ssh", "gcloud", "icloud", "github"
+  ],
+  "cloudcode.kubectlExecShell": "bash",
+  "cloudcode.kubectlRequestTimeout": "2h",
+  "azureFunctions.showFlexEventGridWarning": false,
+  "terminal.integrated.letterSpacing": 0.5,
+  "terminal.integrated.localEchoEnabled": "on",
+  "terminal.integrated.macOptionClickForcesSelection": true,
+  "terminal.integrated.macOptionIsMeta": true,
+  "terminal.integrated.middleClickBehavior": "paste",
+  "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.emptyWindow": true,
+  "security.workspace.trust.enabled": true,
+  "security.workspace.trust.banner": "always",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": false,
+    "scminput": true
+  },
+  "settingsSync.ignoredExtensions": [
+    "wscats.cors-browser",
+    "aaravb.chrome-extension-developer-tools"
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.largeFileOptimizations": false,
+  "redhat.telemetry.enabled": true,
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.sol": "default"
+  },
+  "vs-kubernetes.vscode-kubernetes.kubectl-path-windows": "C:\\Users\\genyo\\.vs-kubernetes\\tools\\kubectl\\kubectl.exe",
+  "vs-kubernetes.vscode-kubernetes.minikube-path-windows": "C:\\Users\\genyo\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe",
+  "vs-kubernetes.vscode-kubernetes.helm-path-windows": "C:\\Users\\genyo\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
+  "gitlens.graph.onlyFollowFirstParent": false,
+  "diffEditor.codeLens": true,
+  "inlineChat.finishOnType": true,
+  "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
+  "terminal.integrated.allowMnemonics": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.enableVisualBell": true,
+  "settingsSync.ignoredSettings": [
+    "terminal.integrated.profiles.osx"
+  ],
+  "terminal.integrated.profiles.linux": {
+    "bash": { "path": "bash", "icon": "terminal-bash" },
+    "zsh": { "path": "zsh" },
+    "fish": { "path": "fish" },
+    "tmux": { "path": "tmux", "icon": "terminal-tmux" },
+    "pwsh": { "path": "pwsh", "icon": "terminal-powershell" }
+  },
+  "githubPullRequests.remotes": [
+    "origin", "upstream", "main", "elparadisogonzalo", "elp"
+  ],
+  "workbench.editor.autoLockGroups": {
+    "default": true,
+    "workbench.input.interactive": true,
+    "notebookOutputEditor": true,
+    "jupyter-notebook": true,
+    "repl": true,
+    "workbench.editors.gettingStartedInput": true,
+    "workbench.editorinputs.searchEditorInput": true,
+    "gitlens.rebase": true,
+    "imagePreview.previewEditor": true,
+    "vscode.videoPreview": true,
+    "jsProfileVisualizer.cpuprofile.table": true
+  },
+  "workbench.editor.sharedViewState": true,
+  "workbench.editor.preferHistoryBasedLanguageDetection": true,
+  "security.promptForLocalFileProtocolHandling": false,
+  "jdk.jdkhome": "c:\\Users\\genyo\\Desktop\\elparadisogonzalo-dapp\\OpenJDK-24"
+}
+
   ]
 }
