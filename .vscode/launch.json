@@ -1,6 +1,7 @@
 {
   "configurations": [
-  pipe
+  .env
+    NODE_ENV
   ]
 }html,<!DOCTYPE html>
 <html lang="en">
@@ -8,7 +9,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elparadisogonzalo</title>
-  <meta name="description" content="Elparadisogonzalo - Your decentralized paradise project" />
+  <meta name="description" content="Elparadisogonzalo - Your decentralized elparadisogonzalo project" />
   <link rel="stylesheet" href="styles.css" />
   <!-- You can add favicon here -->
 </head>
@@ -26,7 +27,7 @@
   <main>
     <section id="about">
       <h2>About Elparadisogonzalo</h2>
-      <p>Your decentralized paradise project — empowering users with blockchain technology.</p>
+      <p>Your decentralized elparadisogonzalo project — empowering users with blockchain technology.</p>
     </section>
     <section id="features">
       <h2>Features</h2>
