@@ -1,12 +1,4 @@
-{
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "1. Lint",
-      "type": "shell",
-      "command": "npm run lint",
-      "problemMatcher": ["$eslint-stylish"],
-      "group": "build"
+
     },
     {
       "label": "2. Build",
@@ -39,16 +31,6 @@
       "dependsOn": ["4. Upload to GCS"],
       "problemMatcher": [],
       "group": "build"
-    },
-    {
-      "label": "mix: Update all deps",
-      "type": "shell",
-      "command": "mix deps.update --all",
-      "problemMatcher": [],
-      "group": {
-        "kind": "build",
-        "isDefault": false
-      }
     },
     {
       "label": "🚀 Full Deploy",
