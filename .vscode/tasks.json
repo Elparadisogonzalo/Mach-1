@@ -43,8 +43,8 @@
       "problemMatcher": [],
       "group": {
         "kind": "build",
-        "isDefault": true
-          // scripts/deploy.js
+          "isDefault": true}
+         { // scripts/deploy.js
 
 import { create } from 'ipfs-http-client';
 import fs from 'fs';
@@ -71,12 +71,7 @@ async function uploadToIPFS() {
           path: path.relative(PUBLIC_DIR, filepath),
           content: fs.readFileSync(filepath)
         };
-      }
-    }
-  }
-
-  walk(PUBLIC_DIR);
-  const result = await client.addAll(files, { wrapWithDirectory: true });
+{ walk(PUBLIC_DIR); const result = await client.addAll(files, { wrapWithDirectory: true });
   let root;
   for await (const file of result) {
     if (!file.path) root = file;
