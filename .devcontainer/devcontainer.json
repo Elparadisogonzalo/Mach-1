@@ -1,4 +1,3 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {"ghcr.io/devcontainers/features/sshd:1": {ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsAENfCrsP80tjhTD0gmAEO6hoJNeavSKW/UE/XgAQr2UYM6jZm8wasqo4qDknwpHrG7iCfy+d3c+dgwiPgyAO6fF8/bbqEwUSjPOwfS9czdQPVOG2HhMjxDVsMEzSZHdPsbaLW10glkfXeCVCVbDrFDddbcwolszszdIpLBTBQyjx+hvm3EvUna1PSBrod2DRc+UgB/UjwSCDNXvPj9xj9IVVQn/cULzt6yJH3lgaKLCJlc/Dsjx2sEHhuF+d8HtL/z9d/e1fxhU//2e1xLAIndwNvGyKbnfRz4dFpkNmmWRJ2osOjpjrUQUVZZipBreFlHMJ0K36gxpMA4hCkKNT}
-}
+  "features": {"ghcr.io/devcontainers/features/
