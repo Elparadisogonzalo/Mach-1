@@ -1,0 +1,15 @@
+
+  const client = new Defender({
+    apiKey: process.env. HqB66tDBqzYBWMbmQbkkfonoNSaMmuVi,
+    apiSecret: process.env. RHivbqda7Zgsj8f4sngzn26YzWA41ciEibGeMtia89AJT91y3Far5cEADv3Wv4xM,
+  });
+
+  const deployment = await client.deploy.deployContract({
+    contractName: 'Elparadisogonzalo ',
+    ...
+    metadata: {
+      commitHash: '0xcdafe55c5c58093b8fdee42a82f2dbec7680f945478e89b35ff9d43ef88f6e2e',
+      tag: 'v1.0.0',
+      anyOtherField: 'anyValue',
+    },
+  });
