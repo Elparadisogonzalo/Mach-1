@@ -1,0 +1,59 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // ─────────────────────────────
+    // 🚀 Frontend Dev Server (Vite)
+    // ─────────────────────────────
+    {
+      "name": "Run Vite Frontend",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "HOST": "elp.elparadisogonzalo.com",
+        "PORT": "3000"
+      }
+    },
+
+    // ─────────────────────────────
+    // 🧠 Backend Server
+    // ─────────────────────────────
+    {
+      "name": "Run Node.js Backend",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/server.js",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": "4000"
+      }
+    },
+
+    // ─────────────────────────────
+    // ⚙️ Fullstack: Dev + Backend
+    // ─────────────────────────────
+    {
+      "name": "Start Fullstack (Frontend + Backend)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run fullstack",
+      "cwd": "${workspaceFolder}"
+    },
+
+    // ─────────────────────────────
+    // 📤 Deploy to IPFS or GCloud
+    // ─────────────────────────────
+    {
+      "name": "Deploy to IPFS",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run deploy",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

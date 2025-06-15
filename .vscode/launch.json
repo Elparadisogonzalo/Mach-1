@@ -1,5 +1,20 @@
 {
   "configurations": [
+  on: 
+  
+  jobs:
+    :
+      runs-on: 
+  
+      steps:
+        - name: 
+          run: 
+  
+  git commit -m "Track .zip files with Git LFS"
+  git push origin main
+
+
+
   .env
     NODE_ENV
   ]

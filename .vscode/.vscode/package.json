@@ -1,0 +1,6 @@
+"scripts": {
+  "dev": "vite --host",
+  "backend": "node server.js",
+  "fullstack": "concurrently \"npm run backend\" \"npm run dev\"",
+  "deploy": "node deploy.js"
+}
