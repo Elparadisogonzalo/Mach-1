@@ -1,0 +1,65 @@
+name: Elparadisogonzalo CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: 📦 Install Dependencies
+      run: npm ci
+
+    - name: 🧪 Run Tests
+      run: npm test
+
+    - name: 🔍 Lint Code
+      run: npm run lint
+
+    - name: ⚙️ Build Project
+      run: npm run build
+
+    - name: 🚀 Deploy to IPFS via Infura
+      if: github.ref == 'refs/heads/main'
+      run: |
+        npx ipfs-deploy build --remote https://ipfs.infura.io:5001
+      env:
+        INFURA_PROJECT_ID: ${{ secrets.429c528a2c524a0ba1fa538343d025b2}}
+        INFURA_PROJECT_SECRET: ${{ secrets.jRt9isIlfMpWF2jawyJ6GHXf5D1NvrJHDh3fe2JreaaiUii6TF8a/A }}
+
+    - name: 🌐 Update Unstoppable Domain DNS (CNAME/IPFS)
+      if: github.ref == 'refs/heads/main'
+      run: |
+        echo "Updating DNS or IPFS record via API..."
+        # Add your unstoppable domain update logic here using curl or sdk
+      env:
+        UD_API_KEY: ${{ secrets.UD_API_KEY }}
+
+    - name: ✅ Notify on Success
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{ secrets.genyoungclip@gmail.com }}
+        password: ${{ secrets.EMAIL_PASS }}
+        subject: "🚀 Elparadisogonzalo - Deployment Successful"
+        to: your@email.com
+        from: ${{ secrets.EMAIL_USER }}
+        body: "Your dApp has been built and deployed successfully."
+
+    # - name: 🧠 Future Step: zkRollup or L2 Deployment
+    #   run: echo "TODO: Integrate zkSync/Optimism here"
