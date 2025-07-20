@@ -7,7 +7,7 @@
 
   gtag('config', 'AW-16569640454');
 </script>
-curl --url https://base-mainnet.infura.io/v3/6267a9f5a93049eabb19549fcc7acc40 \
+curl --url https://base-mainnet.infura.io/v3/429c528a2c524a0ba1fa538343d025b2 \
   -X POST \
   -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
