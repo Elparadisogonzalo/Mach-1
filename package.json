@@ -1,10 +1,21 @@
-"name": "@elparadisogonzalo/server",
+{
+  "name": "@elparadiso/security-checks",
   "version": "1.0.0",
-  "description": "Server app that uses the elparadisogonzalo/assets3 package",
-  "main": "index.js",
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "elparadisogonzalo/assets": "1.0.0"
-  }
-
+  "description": "Security validation tools for Solidity smart contracts and Web3 dApps",
+  "main": "npm.js",
+  "scripts": {
+   "test": "echo \"No test defined yet\""
+ },
+ "keywords": ["solidity", "security", "audit", "web3", "dapp", "ethereum", "bsc"],
+  "author": "Elparadisogonzalo <koa@elparadisogonzalo.com>",
+ "license": "MIT",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koagonzalo11/elparadisogonzalo-monorepo.git"
+  },
+ "bugs": {
+    "url": "https://github.com/koagonzalo11/elparadisogonzalo-monorepo/issues"
+  },
+  "homepage": "https://elparadisogonzalo.com"
+}
