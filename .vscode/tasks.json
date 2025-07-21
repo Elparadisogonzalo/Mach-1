@@ -53,7 +53,7 @@ import { execSync } from 'child_process';
 import axios from 'axios';
 
 const IPFS_API = 'https://ipfs.infura.io:5001';
-const PUBLIC_DIR = './frontend/dist'; // adjust if needed
+const PUBLIC_DIR = './frontend/dist'; // Adjust if needed
 
 async function uploadToIPFS() {
   const client = create({ url: IPFS_API });
@@ -70,9 +70,16 @@ async function uploadToIPFS() {
         files.push({
           path: path.relative(PUBLIC_DIR, filepath),
           content: fs.readFileSync(filepath)
-        };
-{ walk(PUBLIC_DIR); const result = await client.addAll(files, { wrapWithDirectory: true });
+        });
+      }
+    }
+  }
+
+  walk(PUBLIC_DIR);
+
+  const result = client.addAll(files, { wrapWithDirectory: true });
   let root;
+
   for await (const file of result) {
     if (!file.path) root = file;
   }
@@ -83,20 +90,27 @@ async function uploadToIPFS() {
 async function updateUnstoppable(ipfsHash) {
   const domain = 'elparadisogonzalo.com';
   const token = process.env.UNSTOPPABLE_API_KEY;
+
   if (!token) throw new Error('Missing UNSTOPPABLE_API_KEY in env');
 
   const url = `https://api.unstoppabledomains.com/v1/domains/${domain}/records/ipfs.html.value`;
+
   await axios.put(
     url,
     { value: ipfsHash },
-    { headers: { Authorization: `Bearer ${token}` } }
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    }
   );
+
   console.log(`🔗 Domain updated: ${domain} → ${ipfsHash}`);
 }
 
 function runCI() {
   try {
-    execSync(`gh workflow run deploy.yml`, { stdio: 'inherit' });
+    execSync('gh workflow run deploy.yml', { stdio: 'inherit' });
   } catch (err) {
     console.warn('⚠️ GitHub Actions trigger failed:', err.message);
   }
@@ -111,31 +125,28 @@ function publishToNpm() {
 }
 
 async function main() {
-  console.log('🏗️ Building project...');
-  execSync('npm run build', { stdio: 'inherit' });
+  try {
+    console.log('🏗️ Building project...');
+    execSync('npm run build', { stdio: 'inherit' });
 
-  console.log('🚚 Uploading to IPFS...');
-  const ipfsHash = await uploadToIPFS();
-  console.log(`✅ IPFS upload complete: ${ipfsHash}`);
+    console.log('🚚 Uploading to IPFS...');
+    const ipfsHash = await uploadToIPFS();
+    console.log(`✅ IPFS upload complete: ${ipfsHash}`);
 
-  console.log('🌐 Updating Unstoppable Domain...');
-  await updateUnstoppable(ipfsHash);
+    console.log('🌐 Updating Unstoppable Domain...');
+    await updateUnstoppable(ipfsHash);
 
-  console.log('🚀 Triggering CI/CD...');
-  runCI();
+    console.log('🚀 Triggering CI/CD...');
+    runCI();
 
-  console.log('📦 Publishing to npm...');
-  publishToNpm();
+    console.log('📦 Publishing to npm...');
+    publishToNpm();
 
-  console.log('✅ Deploy complete!');
+    console.log('✅ Deploy complete!');
+  } catch (err) {
+    console.error('❌ Deploy failed:', err);
+    process.exit(1);
+  }
 }
 
-main().catch(err => {
-  console.error('❌ Deploy failed:', err);
-  process.exit(1);
-});
-
-      }
-    }
-  ]
-}
+main();
