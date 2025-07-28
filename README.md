@@ -11,8 +11,8 @@ This repository is designed to interact with **Ethereum & Binance Smart Chain (B
 
 ### 1️⃣ Clone the Repository  
 ```bash
-git clone https://github.com/koagonzalo11/asset3.git
-cd asset3
+git clone https://github.com/koagonzalo11/elparadisogonzalo-monorepo.git
+cd elparadisogonzalo-monorepo
 
 ### 2️⃣ Install Dependencies  
 Make sure you have **Node.js** and **npm** installed. Then, run:  
