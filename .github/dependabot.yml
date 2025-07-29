@@ -1,10 +1,46 @@
-# To get started with Dependabot version updates, you'll need to specify # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 version: 2
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "daily"
+  # ───────────── Node.js (npm/yarn) ─────────────
+  - package-ecosystem: "npm"
+    directory: "/"  # Root JS
+    schedule: { interval: "daily" }
+
+  - package-ecosystem: "npm"
+    directory: "/packages/frontend"
+    schedule: { interval: "daily" }
+
+  - package-ecosystem: "npm"
+    directory: "/packages/backend"
+    schedule: { interval: "daily" }
+
+  # ───────────── Python (pip) ─────────────
+  - package-ecosystem: "pip"
+    directory: "/packages/api"  # or wherever requirements.txt is
+    schedule: { interval: "weekly" }
+
+  # ───────────── Rust (cargo) ─────────────
+  - package-ecosystem: "cargo"
+    directory: "/packages/rust"  # or adjust if Cargo.toml is elsewhere
+    schedule: { interval: "weekly" }
+
+  # ───────────── Java (maven) ─────────────
+  - package-ecosystem: "maven"
+    directory: "/packages/java"  # adjust if pom.xml is elsewhere
+    schedule: { interval: "weekly" }
+
+  # ───────────── Solidity (custom/hardhat) ─────────────
+  # Hardhat uses npm under the hood, so already covered above.
+  # But if using Foundry or other custom tools:
+  - package-ecosystem: "github-actions"
+    directory: "/contracts"
+    schedule: { interval: "weekly" }
+
+  # ───────────── Docker ─────────────
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule: { interval: "weekly" }
+
+  # ───────────── GitHub Actions ─────────────
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule: { interval: "weekly" }
