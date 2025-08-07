@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    - cron: '0 0 * * 0'  # Weekly scan every Sunday
+    - cron: '0 0 * * 0'  # daily scan every Sunday
 
 jobs:
   analyze:
@@ -16,7 +16,7 @@ jobs:
     permissions:
       actions: read
       contents: read
-      security-events: write
+      security-events: read
 
     strategy:
       fail-fast: false
