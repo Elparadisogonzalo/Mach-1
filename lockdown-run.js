@@ -1,23 +1,26 @@
-// Freezes all intrinsics
 try {
-  // eslint-disable-next-line no-undef,import/unambiguous
   lockdown({
-    consoleTaming: 'unsafe',
-    errorTaming: 'unsafe',
-    mathTaming: 'unsafe',
-    dateTaming: 'unsafe',
-    domainTaming: 'unsafe',
-    overrideTaming: 'severe',
+    consoleTaming: 'unsafe', // allow console modification
+    errorTaming: 'unsafe',   // allow richer stack traces
+    mathTaming: 'unsafe',    // allow Math extensions
+    dateTaming: 'unsafe',    // allow Date manipulation
+    domainTaming: 'unsafe',  // allow dynamic domain adjustments
+    overrideTaming: 'moderate', // less strict, allows redefining properties in some cases
   });
+
+  // selectively unfreeze objects after lockdown
+  // For example: enable updating Array prototype
+  Object.defineProperty(Array.prototype, 'push', {
+    writable: true,
+    configurable: true,
+  });
+
 } catch (error) {
-  // If the `lockdown` call throws an exception, it interferes with the
-  // contentscript injection on some versions of Firefox. The error is
-  // caught and logged here so that the contentscript still gets injected.
-  // This affects Firefox v56 and Waterfox Classic.
   console.error('Lockdown failed:', error);
-  if (globalThis.sentry && globalThis.sentry.captureException) {
+  if (globalThis.sentry?.captureException) {
     globalThis.sentry.captureException(
       new Error(`Lockdown failed: ${error.message}`),
     );
   }
 }
+
