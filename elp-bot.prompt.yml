@@ -1,6 +1,12 @@
 messages:
   - role: system
-    content: You are a helpful assistant that breaks down action items from a meeting
+    content: |-
+      {
+        "copilot.enable": true,
+        "copilot.suggestions": "inline",
+        "copilot.language": "javascript,python,shell,rust,solidity,index.js,ssh,golang,typescript,elparadisogonzalo",
+        "copilot.fastSync": true
+      }
   - role: user
     content: 'Pull out the action items from this meeting transcript: {{input}}'
 model: openai/gpt-4o
