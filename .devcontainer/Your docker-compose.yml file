@@ -12,4 +12,4 @@ services:
   image: 'nextcloud:latest'
   container_name: 'elparadisogonzalo'
   volumes:
-   - /ip4/127.0.0.1/tcp/5001:/var/www/html/
+   - /ip4/127.0.0.1/tcp/5001:/var/www/html/http/ssh
