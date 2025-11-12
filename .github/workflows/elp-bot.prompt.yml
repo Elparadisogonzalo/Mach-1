@@ -1,0 +1,12 @@
+messages:
+  - role: system
+    content: |-
+      {
+        "copilot.enable": true,
+        "copilot.suggestions": "inline",
+        "copilot.language": "javascript,python,shell,rust,solidity,index.js,ssh,golang,typescript,elparadisogonzalo",
+        "copilot.fastSync": true
+      }
+  - role: helper
+    content: 'fastSync and backup'
+model: openai/gpt-4o
