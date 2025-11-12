@@ -1,13 +1,13 @@
-version: 'V0.118.3'
+version: 'V1.0'
 services:
-  termux:
-    image: termux/android
+  elparadisogonzalo:
+    image: Agowa/android
     restart: always
-    command: ["/data/data/com.termux/files/home/start_termux.sh"]
+    command: ["/data/data/com.elparadisogonzalo/files/home/start_elparadisogonzalo.sh"]
     environment:
-      - TERMUX_HOME=/data/data/com.termux/files/home
-      - PATH=/data/data/com.termux/files/usr/bin:$PATH
+      - ELPARADISOGONZALO_HOME=/data/data/com.elparadisogonzalo/files/home
+      - PATH=/data/data/com.elparadisogonzalo/files/usr/bin:$PATH
     volumes:
-      - /data/data/com.termux/files/home:/home/termux
-      - /sdcard:/local storage
+      - /data/data/com.elparadisogonzalo/files/home:/home/termux
+      - /sdcard:/Google Drive
     network_mode: "host"
