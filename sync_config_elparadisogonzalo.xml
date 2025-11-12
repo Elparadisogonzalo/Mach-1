@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <syncConfig>
-  <user>
+  <user>genyo<user>
   <email>elparadisogonzaloserviceslimit@gmail.com</email>
    <email>koa@elparadisogonzalo.com</email>
    <email>genyoungclip@gmail.com</email>
+    <email>dealsman9@gmail.com</email>
+     <email>koagonzalo@gmail.com</email>
     <email>azehagowa@gmail.com</email>
     <domain>elparadisogonzalo.com</domain>
   </user>
   <syncSettings>
-    <direction>two-way</direction>
-    <frequency>daily</frequency>
+    <direction>one</direction>
+    <frequency>hourly</frequency>
     <lastSynced>per-seconds</lastSynced>
     <data>
       <item type="emails" enabled="true" />
